@@ -13105,7 +13105,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
@@ -13135,8 +13135,8 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>arn:aws:iam::260184238360:role/service-role/AmazonSageMaker-ExecutionRole-20210208T070106
-CPU times: user 203 ms, sys: 7.28 ms, total: 210 ms
-Wall time: 333 ms
+CPU times: user 1.04 s, sys: 177 ms, total: 1.21 s
+Wall time: 10 s
 </pre>
 </div>
 </div>
@@ -13186,16 +13186,16 @@ Wall time: 333 ms
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>--2021-02-08 06:30:52--  http://aws-tc-largeobjects.s3-us-west-2.amazonaws.com/DIG-TF-200-MLBEES-10-EN/dataset.zip
-Resolving aws-tc-largeobjects.s3-us-west-2.amazonaws.com (aws-tc-largeobjects.s3-us-west-2.amazonaws.com)... 52.218.244.1
-Connecting to aws-tc-largeobjects.s3-us-west-2.amazonaws.com (aws-tc-largeobjects.s3-us-west-2.amazonaws.com)|52.218.244.1|:80... connected.
+<pre>--2021-02-08 09:28:59--  http://aws-tc-largeobjects.s3-us-west-2.amazonaws.com/DIG-TF-200-MLBEES-10-EN/dataset.zip
+Resolving aws-tc-largeobjects.s3-us-west-2.amazonaws.com (aws-tc-largeobjects.s3-us-west-2.amazonaws.com)... 52.218.224.233
+Connecting to aws-tc-largeobjects.s3-us-west-2.amazonaws.com (aws-tc-largeobjects.s3-us-west-2.amazonaws.com)|52.218.224.233|:80... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 70375947 (67M) [application/x-zip-compressed]
-Saving to: ‘dataset.zip’
+Saving to: ‘dataset.zip.1’
 
-dataset.zip         100%[===================&gt;]  67.12M  10.1MB/s    in 7.3s    
+dataset.zip.1       100%[===================&gt;]  67.12M  8.40MB/s    in 8.0s    
 
-2021-02-08 06:31:00 (9.26 MB/s) - ‘dataset.zip’ saved [70375947/70375947]
+2021-02-08 09:29:08 (8.41 MB/s) - ‘dataset.zip.1’ saved [70375947/70375947]
 
 </pre>
 </div>
@@ -13275,10 +13275,528 @@ dataset.zip         100%[===================&gt;]  67.12M  10.1MB/s    in 7.3s
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="ch">#!aws s3 sync --exclude=&quot;*&quot; --include=&quot;[0-9]*.jpg&quot; . s3://$BUCKET/$PREFIX/</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>aws s3 sync --exclude<span class="o">=</span><span class="s2">&quot;*&quot;</span> --include<span class="o">=</span><span class="s2">&quot;[0-9]*.jpg&quot;</span> . s3://<span class="nv">$BUCKET</span>/<span class="nv">$PREFIX</span>/
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>warning: Skipping file /home/ec2-user/SageMaker/lost+found. File/Directory is not readable.
+upload: ./10250726.jpg to s3://sagemaker-us-east-1-260184238360/input/10250726.jpg 
+upload: ./10006450.jpg to s3://sagemaker-us-east-1-260184238360/input/10006450.jpg    
+upload: ./1025450.jpg to s3://sagemaker-us-east-1-260184238360/input/1025450.jpg      
+upload: ./1063563.jpg to s3://sagemaker-us-east-1-260184238360/input/1063563.jpg      
+upload: ./10059108.jpg to s3://sagemaker-us-east-1-260184238360/input/10059108.jpg    
+upload: ./10694926.jpg to s3://sagemaker-us-east-1-260184238360/input/10694926.jpg    
+upload: ./10658023.jpg to s3://sagemaker-us-east-1-260184238360/input/10658023.jpg    
+upload: ./10551061.jpg to s3://sagemaker-us-east-1-260184238360/input/10551061.jpg    
+upload: ./10022723.jpg to s3://sagemaker-us-east-1-260184238360/input/10022723.jpg    
+upload: ./10631806.jpg to s3://sagemaker-us-east-1-260184238360/input/10631806.jpg    
+upload: ./10437385.jpg to s3://sagemaker-us-east-1-260184238360/input/10437385.jpg  
+upload: ./10311147.jpg to s3://sagemaker-us-east-1-260184238360/input/10311147.jpg  
+upload: ./10665301.jpg to s3://sagemaker-us-east-1-260184238360/input/10665301.jpg  
+upload: ./10299519.jpg to s3://sagemaker-us-east-1-260184238360/input/10299519.jpg  
+upload: ./1060304.jpg to s3://sagemaker-us-east-1-260184238360/input/1060304.jpg    
+upload: ./10632489.jpg to s3://sagemaker-us-east-1-260184238360/input/10632489.jpg  
+upload: ./10923199.jpg to s3://sagemaker-us-east-1-260184238360/input/10923199.jpg  
+upload: ./11424751.jpg to s3://sagemaker-us-east-1-260184238360/input/11424751.jpg  
+upload: ./1091455.jpg to s3://sagemaker-us-east-1-260184238360/input/1091455.jpg    
+upload: ./11186056.jpg to s3://sagemaker-us-east-1-260184238360/input/11186056.jpg  
+upload: ./10937818.jpg to s3://sagemaker-us-east-1-260184238360/input/10937818.jpg  
+upload: ./11519509.jpg to s3://sagemaker-us-east-1-260184238360/input/11519509.jpg  
+upload: ./1135667.jpg to s3://sagemaker-us-east-1-260184238360/input/1135667.jpg    
+upload: ./10983841.jpg to s3://sagemaker-us-east-1-260184238360/input/10983841.jpg  
+upload: ./11421145.jpg to s3://sagemaker-us-east-1-260184238360/input/11421145.jpg  
+upload: ./11257.jpg to s3://sagemaker-us-east-1-260184238360/input/11257.jpg        
+upload: ./11558127.jpg to s3://sagemaker-us-east-1-260184238360/input/11558127.jpg  
+upload: ./11617097.jpg to s3://sagemaker-us-east-1-260184238360/input/11617097.jpg  
+upload: ./11523017.jpg to s3://sagemaker-us-east-1-260184238360/input/11523017.jpg  
+upload: ./11626927.jpg to s3://sagemaker-us-east-1-260184238360/input/11626927.jpg  
+upload: ./12122915.jpg to s3://sagemaker-us-east-1-260184238360/input/12122915.jpg  
+upload: ./11340084.jpg to s3://sagemaker-us-east-1-260184238360/input/11340084.jpg  
+upload: ./11519394.jpg to s3://sagemaker-us-east-1-260184238360/input/11519394.jpg  
+upload: ./11658794.jpg to s3://sagemaker-us-east-1-260184238360/input/11658794.jpg  
+upload: ./11543756.jpg to s3://sagemaker-us-east-1-260184238360/input/11543756.jpg  
+upload: ./122171.jpg to s3://sagemaker-us-east-1-260184238360/input/122171.jpg      
+upload: ./12116636.jpg to s3://sagemaker-us-east-1-260184238360/input/12116636.jpg  
+upload: ./12372307.jpg to s3://sagemaker-us-east-1-260184238360/input/12372307.jpg  
+upload: ./12696936.jpg to s3://sagemaker-us-east-1-260184238360/input/12696936.jpg  
+upload: ./1226798.jpg to s3://sagemaker-us-east-1-260184238360/input/1226798.jpg
+upload: ./12368560.jpg to s3://sagemaker-us-east-1-260184238360/input/12368560.jpg
+upload: ./12759368.jpg to s3://sagemaker-us-east-1-260184238360/input/12759368.jpg
+upload: ./12770815.jpg to s3://sagemaker-us-east-1-260184238360/input/12770815.jpg
+upload: ./12452075.jpg to s3://sagemaker-us-east-1-260184238360/input/12452075.jpg
+upload: ./12441571.jpg to s3://sagemaker-us-east-1-260184238360/input/12441571.jpg
+upload: ./129048.jpg to s3://sagemaker-us-east-1-260184238360/input/129048.jpg
+upload: ./12993998.jpg to s3://sagemaker-us-east-1-260184238360/input/12993998.jpg
+upload: ./12884707.jpg to s3://sagemaker-us-east-1-260184238360/input/12884707.jpg
+upload: ./1277788.jpg to s3://sagemaker-us-east-1-260184238360/input/1277788.jpg
+upload: ./11668554.jpg to s3://sagemaker-us-east-1-260184238360/input/11668554.jpg
+upload: ./13019032.jpg to s3://sagemaker-us-east-1-260184238360/input/13019032.jpg
+upload: ./12913742.jpg to s3://sagemaker-us-east-1-260184238360/input/12913742.jpg
+upload: ./12928376.jpg to s3://sagemaker-us-east-1-260184238360/input/12928376.jpg
+upload: ./1233874.jpg to s3://sagemaker-us-east-1-260184238360/input/1233874.jpg
+upload: ./13062029.jpg to s3://sagemaker-us-east-1-260184238360/input/13062029.jpg
+upload: ./13273626.jpg to s3://sagemaker-us-east-1-260184238360/input/13273626.jpg
+upload: ./13273620.jpg to s3://sagemaker-us-east-1-260184238360/input/13273620.jpg
+upload: ./13272553.jpg to s3://sagemaker-us-east-1-260184238360/input/13272553.jpg
+upload: ./12884927.jpg to s3://sagemaker-us-east-1-260184238360/input/12884927.jpg
+upload: ./13068600.jpg to s3://sagemaker-us-east-1-260184238360/input/13068600.jpg
+upload: ./13373012.jpg to s3://sagemaker-us-east-1-260184238360/input/13373012.jpg
+upload: ./13486009.jpg to s3://sagemaker-us-east-1-260184238360/input/13486009.jpg
+upload: ./13428524.jpg to s3://sagemaker-us-east-1-260184238360/input/13428524.jpg
+upload: ./1341535.jpg to s3://sagemaker-us-east-1-260184238360/input/1341535.jpg
+upload: ./13521479.jpg to s3://sagemaker-us-east-1-260184238360/input/13521479.jpg
+upload: ./13441895.jpg to s3://sagemaker-us-east-1-260184238360/input/13441895.jpg
+upload: ./1348286.jpg to s3://sagemaker-us-east-1-260184238360/input/1348286.jpg
+upload: ./13732698.jpg to s3://sagemaker-us-east-1-260184238360/input/13732698.jpg
+upload: ./13570276.jpg to s3://sagemaker-us-east-1-260184238360/input/13570276.jpg
+upload: ./12010614.jpg to s3://sagemaker-us-east-1-260184238360/input/12010614.jpg
+upload: ./1167794.jpg to s3://sagemaker-us-east-1-260184238360/input/1167794.jpg
+upload: ./1303310.jpg to s3://sagemaker-us-east-1-260184238360/input/1303310.jpg
+upload: ./13998689.jpg to s3://sagemaker-us-east-1-260184238360/input/13998689.jpg
+upload: ./13876315.jpg to s3://sagemaker-us-east-1-260184238360/input/13876315.jpg
+upload: ./13889661.jpg to s3://sagemaker-us-east-1-260184238360/input/13889661.jpg
+upload: ./12939357.jpg to s3://sagemaker-us-east-1-260184238360/input/12939357.jpg
+upload: ./13496549.jpg to s3://sagemaker-us-east-1-260184238360/input/13496549.jpg
+upload: ./13601043.jpg to s3://sagemaker-us-east-1-260184238360/input/13601043.jpg
+upload: ./1382920.jpg to s3://sagemaker-us-east-1-260184238360/input/1382920.jpg
+upload: ./1188934.jpg to s3://sagemaker-us-east-1-260184238360/input/1188934.jpg
+upload: ./14181278.jpg to s3://sagemaker-us-east-1-260184238360/input/14181278.jpg
+upload: ./13870264.jpg to s3://sagemaker-us-east-1-260184238360/input/13870264.jpg
+upload: ./14243427.jpg to s3://sagemaker-us-east-1-260184238360/input/14243427.jpg
+upload: ./1385268.jpg to s3://sagemaker-us-east-1-260184238360/input/1385268.jpg
+upload: ./14350171.jpg to s3://sagemaker-us-east-1-260184238360/input/14350171.jpg
+upload: ./14597891.jpg to s3://sagemaker-us-east-1-260184238360/input/14597891.jpg
+upload: ./14814253.jpg to s3://sagemaker-us-east-1-260184238360/input/14814253.jpg
+upload: ./1402452.jpg to s3://sagemaker-us-east-1-260184238360/input/1402452.jpg
+upload: ./13830001.jpg to s3://sagemaker-us-east-1-260184238360/input/13830001.jpg
+upload: ./1458551.jpg to s3://sagemaker-us-east-1-260184238360/input/1458551.jpg
+upload: ./14519274.jpg to s3://sagemaker-us-east-1-260184238360/input/14519274.jpg
+upload: ./14313481.jpg to s3://sagemaker-us-east-1-260184238360/input/14313481.jpg
+upload: ./15140063.jpg to s3://sagemaker-us-east-1-260184238360/input/15140063.jpg
+upload: ./14816563.jpg to s3://sagemaker-us-east-1-260184238360/input/14816563.jpg
+upload: ./14412291.jpg to s3://sagemaker-us-east-1-260184238360/input/14412291.jpg
+upload: ./15119215.jpg to s3://sagemaker-us-east-1-260184238360/input/15119215.jpg
+upload: ./14243346.jpg to s3://sagemaker-us-east-1-260184238360/input/14243346.jpg
+upload: ./15146992.jpg to s3://sagemaker-us-east-1-260184238360/input/15146992.jpg
+upload: ./15076485.jpg to s3://sagemaker-us-east-1-260184238360/input/15076485.jpg
+upload: ./15028714.jpg to s3://sagemaker-us-east-1-260184238360/input/15028714.jpg
+upload: ./15086353.jpg to s3://sagemaker-us-east-1-260184238360/input/15086353.jpg
+upload: ./15119232.jpg to s3://sagemaker-us-east-1-260184238360/input/15119232.jpg
+upload: ./15182039.jpg to s3://sagemaker-us-east-1-260184238360/input/15182039.jpg
+upload: ./15304016.jpg to s3://sagemaker-us-east-1-260184238360/input/15304016.jpg
+upload: ./15305778.jpg to s3://sagemaker-us-east-1-260184238360/input/15305778.jpg
+upload: ./1522678.jpg to s3://sagemaker-us-east-1-260184238360/input/1522678.jpg
+upload: ./15469914.jpg to s3://sagemaker-us-east-1-260184238360/input/15469914.jpg
+upload: ./15182038.jpg to s3://sagemaker-us-east-1-260184238360/input/15182038.jpg
+upload: ./15620821.jpg to s3://sagemaker-us-east-1-260184238360/input/15620821.jpg
+upload: ./15672860.jpg to s3://sagemaker-us-east-1-260184238360/input/15672860.jpg
+upload: ./15328335.jpg to s3://sagemaker-us-east-1-260184238360/input/15328335.jpg
+upload: ./15459727.jpg to s3://sagemaker-us-east-1-260184238360/input/15459727.jpg
+upload: ./15338029.jpg to s3://sagemaker-us-east-1-260184238360/input/15338029.jpg
+upload: ./15709038.jpg to s3://sagemaker-us-east-1-260184238360/input/15709038.jpg
+upload: ./15688300.jpg to s3://sagemaker-us-east-1-260184238360/input/15688300.jpg
+upload: ./15932759.jpg to s3://sagemaker-us-east-1-260184238360/input/15932759.jpg
+upload: ./15793906.jpg to s3://sagemaker-us-east-1-260184238360/input/15793906.jpg
+upload: ./15769251.jpg to s3://sagemaker-us-east-1-260184238360/input/15769251.jpg
+upload: ./15970434.jpg to s3://sagemaker-us-east-1-260184238360/input/15970434.jpg
+upload: ./16296603.jpg to s3://sagemaker-us-east-1-260184238360/input/16296603.jpg
+upload: ./15754680.jpg to s3://sagemaker-us-east-1-260184238360/input/15754680.jpg
+upload: ./16661995.jpg to s3://sagemaker-us-east-1-260184238360/input/16661995.jpg
+upload: ./1636555.jpg to s3://sagemaker-us-east-1-260184238360/input/1636555.jpg
+upload: ./1621891.jpg to s3://sagemaker-us-east-1-260184238360/input/1621891.jpg
+upload: ./16184070.jpg to s3://sagemaker-us-east-1-260184238360/input/16184070.jpg
+upload: ./16562561.jpg to s3://sagemaker-us-east-1-260184238360/input/16562561.jpg
+upload: ./16152609.jpg to s3://sagemaker-us-east-1-260184238360/input/16152609.jpg
+upload: ./16459302.jpg to s3://sagemaker-us-east-1-260184238360/input/16459302.jpg
+upload: ./16218403.jpg to s3://sagemaker-us-east-1-260184238360/input/16218403.jpg
+upload: ./16724633.jpg to s3://sagemaker-us-east-1-260184238360/input/16724633.jpg
+upload: ./16689677.jpg to s3://sagemaker-us-east-1-260184238360/input/16689677.jpg
+upload: ./16832956.jpg to s3://sagemaker-us-east-1-260184238360/input/16832956.jpg
+upload: ./16993962.jpg to s3://sagemaker-us-east-1-260184238360/input/16993962.jpg
+upload: ./16469176.jpg to s3://sagemaker-us-east-1-260184238360/input/16469176.jpg
+upload: ./1686330.jpg to s3://sagemaker-us-east-1-260184238360/input/1686330.jpg
+upload: ./16900739.jpg to s3://sagemaker-us-east-1-260184238360/input/16900739.jpg
+upload: ./16630340.jpg to s3://sagemaker-us-east-1-260184238360/input/16630340.jpg
+upload: ./17318228.jpg to s3://sagemaker-us-east-1-260184238360/input/17318228.jpg
+upload: ./17067137.jpg to s3://sagemaker-us-east-1-260184238360/input/17067137.jpg
+upload: ./17516125.jpg to s3://sagemaker-us-east-1-260184238360/input/17516125.jpg
+upload: ./1743337.jpg to s3://sagemaker-us-east-1-260184238360/input/1743337.jpg
+upload: ./17343330.jpg to s3://sagemaker-us-east-1-260184238360/input/17343330.jpg
+upload: ./17283792.jpg to s3://sagemaker-us-east-1-260184238360/input/17283792.jpg
+upload: ./17179096.jpg to s3://sagemaker-us-east-1-260184238360/input/17179096.jpg
+upload: ./1745127.jpg to s3://sagemaker-us-east-1-260184238360/input/1745127.jpg
+upload: ./1750527.jpg to s3://sagemaker-us-east-1-260184238360/input/1750527.jpg
+upload: ./1753721.jpg to s3://sagemaker-us-east-1-260184238360/input/1753721.jpg
+upload: ./16996647.jpg to s3://sagemaker-us-east-1-260184238360/input/16996647.jpg
+upload: ./17852751.jpg to s3://sagemaker-us-east-1-260184238360/input/17852751.jpg
+upload: ./17582620.jpg to s3://sagemaker-us-east-1-260184238360/input/17582620.jpg
+upload: ./17752165.jpg to s3://sagemaker-us-east-1-260184238360/input/17752165.jpg
+upload: ./17392224.jpg to s3://sagemaker-us-east-1-260184238360/input/17392224.jpg
+upload: ./17846870.jpg to s3://sagemaker-us-east-1-260184238360/input/17846870.jpg
+upload: ./179635.jpg to s3://sagemaker-us-east-1-260184238360/input/179635.jpg
+upload: ./176974.jpg to s3://sagemaker-us-east-1-260184238360/input/176974.jpg
+upload: ./18072260.jpg to s3://sagemaker-us-east-1-260184238360/input/18072260.jpg
+upload: ./17988156.jpg to s3://sagemaker-us-east-1-260184238360/input/17988156.jpg
+upload: ./1827596.jpg to s3://sagemaker-us-east-1-260184238360/input/1827596.jpg
+upload: ./1783055.jpg to s3://sagemaker-us-east-1-260184238360/input/1783055.jpg
+upload: ./1866760.jpg to s3://sagemaker-us-east-1-260184238360/input/1866760.jpg
+upload: ./1870860.jpg to s3://sagemaker-us-east-1-260184238360/input/1870860.jpg
+upload: ./18172239.jpg to s3://sagemaker-us-east-1-260184238360/input/18172239.jpg
+upload: ./17735276.jpg to s3://sagemaker-us-east-1-260184238360/input/17735276.jpg
+upload: ./18826464.jpg to s3://sagemaker-us-east-1-260184238360/input/18826464.jpg
+upload: ./1839890.jpg to s3://sagemaker-us-east-1-260184238360/input/1839890.jpg
+upload: ./1877849.jpg to s3://sagemaker-us-east-1-260184238360/input/1877849.jpg
+upload: ./1897820.jpg to s3://sagemaker-us-east-1-260184238360/input/1897820.jpg
+upload: ./18465677.jpg to s3://sagemaker-us-east-1-260184238360/input/18465677.jpg
+upload: ./19101401.jpg to s3://sagemaker-us-east-1-260184238360/input/19101401.jpg
+upload: ./1921591.jpg to s3://sagemaker-us-east-1-260184238360/input/1921591.jpg
+upload: ./19341453.jpg to s3://sagemaker-us-east-1-260184238360/input/19341453.jpg
+upload: ./1897865.jpg to s3://sagemaker-us-east-1-260184238360/input/1897865.jpg
+upload: ./19342092.jpg to s3://sagemaker-us-east-1-260184238360/input/19342092.jpg
+upload: ./19576035.jpg to s3://sagemaker-us-east-1-260184238360/input/19576035.jpg
+upload: ./196158.jpg to s3://sagemaker-us-east-1-260184238360/input/196158.jpg
+upload: ./19546072.jpg to s3://sagemaker-us-east-1-260184238360/input/19546072.jpg
+upload: ./1960062.jpg to s3://sagemaker-us-east-1-260184238360/input/1960062.jpg
+upload: ./196127.jpg to s3://sagemaker-us-east-1-260184238360/input/196127.jpg
+upload: ./17375861.jpg to s3://sagemaker-us-east-1-260184238360/input/17375861.jpg
+upload: ./19449618.jpg to s3://sagemaker-us-east-1-260184238360/input/19449618.jpg
+upload: ./18741153.jpg to s3://sagemaker-us-east-1-260184238360/input/18741153.jpg
+upload: ./18900641.jpg to s3://sagemaker-us-east-1-260184238360/input/18900641.jpg
+upload: ./20066763.jpg to s3://sagemaker-us-east-1-260184238360/input/20066763.jpg
+upload: ./19899015.jpg to s3://sagemaker-us-east-1-260184238360/input/19899015.jpg
+upload: ./19593060.jpg to s3://sagemaker-us-east-1-260184238360/input/19593060.jpg
+upload: ./19908086.jpg to s3://sagemaker-us-east-1-260184238360/input/19908086.jpg
+upload: ./19916078.jpg to s3://sagemaker-us-east-1-260184238360/input/19916078.jpg
+upload: ./20204304.jpg to s3://sagemaker-us-east-1-260184238360/input/20204304.jpg
+upload: ./20268599.jpg to s3://sagemaker-us-east-1-260184238360/input/20268599.jpg
+upload: ./20259814.jpg to s3://sagemaker-us-east-1-260184238360/input/20259814.jpg
+upload: ./20371916.jpg to s3://sagemaker-us-east-1-260184238360/input/20371916.jpg
+upload: ./20311696.jpg to s3://sagemaker-us-east-1-260184238360/input/20311696.jpg
+upload: ./19849199.jpg to s3://sagemaker-us-east-1-260184238360/input/19849199.jpg
+upload: ./20517772.jpg to s3://sagemaker-us-east-1-260184238360/input/20517772.jpg
+upload: ./2008988.jpg to s3://sagemaker-us-east-1-260184238360/input/2008988.jpg
+upload: ./19774688.jpg to s3://sagemaker-us-east-1-260184238360/input/19774688.jpg
+upload: ./20438918.jpg to s3://sagemaker-us-east-1-260184238360/input/20438918.jpg
+upload: ./21136493.jpg to s3://sagemaker-us-east-1-260184238360/input/21136493.jpg
+upload: ./21148.jpg to s3://sagemaker-us-east-1-260184238360/input/21148.jpg
+upload: ./21163231.jpg to s3://sagemaker-us-east-1-260184238360/input/21163231.jpg
+upload: ./20431306.jpg to s3://sagemaker-us-east-1-260184238360/input/20431306.jpg
+upload: ./20375587.jpg to s3://sagemaker-us-east-1-260184238360/input/20375587.jpg
+upload: ./20473705.jpg to s3://sagemaker-us-east-1-260184238360/input/20473705.jpg
+upload: ./20738988.jpg to s3://sagemaker-us-east-1-260184238360/input/20738988.jpg
+upload: ./20864718.jpg to s3://sagemaker-us-east-1-260184238360/input/20864718.jpg
+upload: ./21198327.jpg to s3://sagemaker-us-east-1-260184238360/input/21198327.jpg
+upload: ./20369982.jpg to s3://sagemaker-us-east-1-260184238360/input/20369982.jpg
+upload: ./20786438.jpg to s3://sagemaker-us-east-1-260184238360/input/20786438.jpg
+upload: ./21065816.jpg to s3://sagemaker-us-east-1-260184238360/input/21065816.jpg
+upload: ./21238683.jpg to s3://sagemaker-us-east-1-260184238360/input/21238683.jpg
+upload: ./21539887.jpg to s3://sagemaker-us-east-1-260184238360/input/21539887.jpg
+upload: ./21288228.jpg to s3://sagemaker-us-east-1-260184238360/input/21288228.jpg
+upload: ./21793650.jpg to s3://sagemaker-us-east-1-260184238360/input/21793650.jpg
+upload: ./21309124.jpg to s3://sagemaker-us-east-1-260184238360/input/21309124.jpg
+upload: ./21605658.jpg to s3://sagemaker-us-east-1-260184238360/input/21605658.jpg
+upload: ./21904310.jpg to s3://sagemaker-us-east-1-260184238360/input/21904310.jpg
+upload: ./20773486.jpg to s3://sagemaker-us-east-1-260184238360/input/20773486.jpg
+upload: ./21669777.jpg to s3://sagemaker-us-east-1-260184238360/input/21669777.jpg
+upload: ./21182718.jpg to s3://sagemaker-us-east-1-260184238360/input/21182718.jpg
+upload: ./21874075.jpg to s3://sagemaker-us-east-1-260184238360/input/21874075.jpg
+upload: ./21301169.jpg to s3://sagemaker-us-east-1-260184238360/input/21301169.jpg
+upload: ./22147209.jpg to s3://sagemaker-us-east-1-260184238360/input/22147209.jpg
+upload: ./21291703.jpg to s3://sagemaker-us-east-1-260184238360/input/21291703.jpg
+upload: ./21572388.jpg to s3://sagemaker-us-east-1-260184238360/input/21572388.jpg
+upload: ./22036101.jpg to s3://sagemaker-us-east-1-260184238360/input/22036101.jpg
+upload: ./22351101.jpg to s3://sagemaker-us-east-1-260184238360/input/22351101.jpg
+upload: ./21524271.jpg to s3://sagemaker-us-east-1-260184238360/input/21524271.jpg
+upload: ./21923539.jpg to s3://sagemaker-us-east-1-260184238360/input/21923539.jpg
+upload: ./22315276.jpg to s3://sagemaker-us-east-1-260184238360/input/22315276.jpg
+upload: ./21483683.jpg to s3://sagemaker-us-east-1-260184238360/input/21483683.jpg
+upload: ./2371862.jpg to s3://sagemaker-us-east-1-260184238360/input/2371862.jpg
+upload: ./2412967.jpg to s3://sagemaker-us-east-1-260184238360/input/2412967.jpg
+upload: ./2665436.jpg to s3://sagemaker-us-east-1-260184238360/input/2665436.jpg
+upload: ./2346456.jpg to s3://sagemaker-us-east-1-260184238360/input/2346456.jpg
+upload: ./2655909.jpg to s3://sagemaker-us-east-1-260184238360/input/2655909.jpg
+upload: ./2351735.jpg to s3://sagemaker-us-east-1-260184238360/input/2351735.jpg
+upload: ./2619775.jpg to s3://sagemaker-us-east-1-260184238360/input/2619775.jpg
+upload: ./228752.jpg to s3://sagemaker-us-east-1-260184238360/input/228752.jpg
+upload: ./2824624.jpg to s3://sagemaker-us-east-1-260184238360/input/2824624.jpg
+upload: ./2742941.jpg to s3://sagemaker-us-east-1-260184238360/input/2742941.jpg
+upload: ./27027.jpg to s3://sagemaker-us-east-1-260184238360/input/27027.jpg
+upload: ./2810169.jpg to s3://sagemaker-us-east-1-260184238360/input/2810169.jpg
+upload: ./2742778.jpg to s3://sagemaker-us-east-1-260184238360/input/2742778.jpg
+upload: ./22214959.jpg to s3://sagemaker-us-east-1-260184238360/input/22214959.jpg
+upload: ./2788781.jpg to s3://sagemaker-us-east-1-260184238360/input/2788781.jpg
+upload: ./2865161.jpg to s3://sagemaker-us-east-1-260184238360/input/2865161.jpg
+upload: ./2815585.jpg to s3://sagemaker-us-east-1-260184238360/input/2815585.jpg
+upload: ./2837296.jpg to s3://sagemaker-us-east-1-260184238360/input/2837296.jpg
+upload: ./2878300.jpg to s3://sagemaker-us-east-1-260184238360/input/2878300.jpg
+upload: ./2775464.jpg to s3://sagemaker-us-east-1-260184238360/input/2775464.jpg
+upload: ./293567.jpg to s3://sagemaker-us-east-1-260184238360/input/293567.jpg
+upload: ./2929786.jpg to s3://sagemaker-us-east-1-260184238360/input/2929786.jpg
+upload: ./2914669.jpg to s3://sagemaker-us-east-1-260184238360/input/2914669.jpg
+upload: ./2840352.jpg to s3://sagemaker-us-east-1-260184238360/input/2840352.jpg
+upload: ./2869125.jpg to s3://sagemaker-us-east-1-260184238360/input/2869125.jpg
+upload: ./2979701.jpg to s3://sagemaker-us-east-1-260184238360/input/2979701.jpg
+upload: ./2934204.jpg to s3://sagemaker-us-east-1-260184238360/input/2934204.jpg
+upload: ./2944554.jpg to s3://sagemaker-us-east-1-260184238360/input/2944554.jpg
+upload: ./2946350.jpg to s3://sagemaker-us-east-1-260184238360/input/2946350.jpg
+upload: ./3051366.jpg to s3://sagemaker-us-east-1-260184238360/input/3051366.jpg
+upload: ./2947798.jpg to s3://sagemaker-us-east-1-260184238360/input/2947798.jpg
+upload: ./2946744.jpg to s3://sagemaker-us-east-1-260184238360/input/2946744.jpg
+upload: ./2985479.jpg to s3://sagemaker-us-east-1-260184238360/input/2985479.jpg
+upload: ./2951747.jpg to s3://sagemaker-us-east-1-260184238360/input/2951747.jpg
+upload: ./2995132.jpg to s3://sagemaker-us-east-1-260184238360/input/2995132.jpg
+upload: ./3009327.jpg to s3://sagemaker-us-east-1-260184238360/input/3009327.jpg
+upload: ./3061550.jpg to s3://sagemaker-us-east-1-260184238360/input/3061550.jpg
+upload: ./3086303.jpg to s3://sagemaker-us-east-1-260184238360/input/3086303.jpg
+upload: ./3018628.jpg to s3://sagemaker-us-east-1-260184238360/input/3018628.jpg
+upload: ./3216956.jpg to s3://sagemaker-us-east-1-260184238360/input/3216956.jpg
+upload: ./3092738.jpg to s3://sagemaker-us-east-1-260184238360/input/3092738.jpg
+upload: ./32131.jpg to s3://sagemaker-us-east-1-260184238360/input/32131.jpg
+upload: ./3236105.jpg to s3://sagemaker-us-east-1-260184238360/input/3236105.jpg
+upload: ./310239.jpg to s3://sagemaker-us-east-1-260184238360/input/310239.jpg
+upload: ./3117194.jpg to s3://sagemaker-us-east-1-260184238360/input/3117194.jpg
+upload: ./3122440.jpg to s3://sagemaker-us-east-1-260184238360/input/3122440.jpg
+upload: ./3144243.jpg to s3://sagemaker-us-east-1-260184238360/input/3144243.jpg
+upload: ./3125305.jpg to s3://sagemaker-us-east-1-260184238360/input/3125305.jpg
+upload: ./3185105.jpg to s3://sagemaker-us-east-1-260184238360/input/3185105.jpg
+upload: ./3233883.jpg to s3://sagemaker-us-east-1-260184238360/input/3233883.jpg
+upload: ./3234797.jpg to s3://sagemaker-us-east-1-260184238360/input/3234797.jpg
+upload: ./3345411.jpg to s3://sagemaker-us-east-1-260184238360/input/3345411.jpg
+upload: ./3345827.jpg to s3://sagemaker-us-east-1-260184238360/input/3345827.jpg
+upload: ./3330424.jpg to s3://sagemaker-us-east-1-260184238360/input/3330424.jpg
+upload: ./3312871.jpg to s3://sagemaker-us-east-1-260184238360/input/3312871.jpg
+upload: ./3337655.jpg to s3://sagemaker-us-east-1-260184238360/input/3337655.jpg
+upload: ./3280744.jpg to s3://sagemaker-us-east-1-260184238360/input/3280744.jpg
+upload: ./3506356.jpg to s3://sagemaker-us-east-1-260184238360/input/3506356.jpg
+upload: ./3362033.jpg to s3://sagemaker-us-east-1-260184238360/input/3362033.jpg
+upload: ./3257087.jpg to s3://sagemaker-us-east-1-260184238360/input/3257087.jpg
+upload: ./3379360.jpg to s3://sagemaker-us-east-1-260184238360/input/3379360.jpg
+upload: ./3498814.jpg to s3://sagemaker-us-east-1-260184238360/input/3498814.jpg
+upload: ./3330409.jpg to s3://sagemaker-us-east-1-260184238360/input/3330409.jpg
+upload: ./3394412.jpg to s3://sagemaker-us-east-1-260184238360/input/3394412.jpg
+upload: ./3481031.jpg to s3://sagemaker-us-east-1-260184238360/input/3481031.jpg
+upload: ./3441057.jpg to s3://sagemaker-us-east-1-260184238360/input/3441057.jpg
+upload: ./343132.jpg to s3://sagemaker-us-east-1-260184238360/input/343132.jpg
+upload: ./3452888.jpg to s3://sagemaker-us-east-1-260184238360/input/3452888.jpg
+upload: ./3585185.jpg to s3://sagemaker-us-east-1-260184238360/input/3585185.jpg
+upload: ./3619917.jpg to s3://sagemaker-us-east-1-260184238360/input/3619917.jpg
+upload: ./3519808.jpg to s3://sagemaker-us-east-1-260184238360/input/3519808.jpg
+upload: ./3732759.jpg to s3://sagemaker-us-east-1-260184238360/input/3732759.jpg
+upload: ./3597137.jpg to s3://sagemaker-us-east-1-260184238360/input/3597137.jpg
+upload: ./3571648.jpg to s3://sagemaker-us-east-1-260184238360/input/3571648.jpg
+upload: ./3633945.jpg to s3://sagemaker-us-east-1-260184238360/input/3633945.jpg
+upload: ./3640343.jpg to s3://sagemaker-us-east-1-260184238360/input/3640343.jpg
+upload: ./3645749.jpg to s3://sagemaker-us-east-1-260184238360/input/3645749.jpg
+upload: ./3687783.jpg to s3://sagemaker-us-east-1-260184238360/input/3687783.jpg
+upload: ./3745384.jpg to s3://sagemaker-us-east-1-260184238360/input/3745384.jpg
+upload: ./3772325.jpg to s3://sagemaker-us-east-1-260184238360/input/3772325.jpg
+upload: ./3875104.jpg to s3://sagemaker-us-east-1-260184238360/input/3875104.jpg
+upload: ./3729432.jpg to s3://sagemaker-us-east-1-260184238360/input/3729432.jpg
+upload: ./3667381.jpg to s3://sagemaker-us-east-1-260184238360/input/3667381.jpg
+upload: ./376521.jpg to s3://sagemaker-us-east-1-260184238360/input/376521.jpg
+upload: ./3680409.jpg to s3://sagemaker-us-east-1-260184238360/input/3680409.jpg
+upload: ./3701197.jpg to s3://sagemaker-us-east-1-260184238360/input/3701197.jpg
+upload: ./3895733.jpg to s3://sagemaker-us-east-1-260184238360/input/3895733.jpg
+upload: ./3879464.jpg to s3://sagemaker-us-east-1-260184238360/input/3879464.jpg
+upload: ./3898660.jpg to s3://sagemaker-us-east-1-260184238360/input/3898660.jpg
+upload: ./3885297.jpg to s3://sagemaker-us-east-1-260184238360/input/3885297.jpg
+upload: ./4064592.jpg to s3://sagemaker-us-east-1-260184238360/input/4064592.jpg
+upload: ./4028470.jpg to s3://sagemaker-us-east-1-260184238360/input/4028470.jpg
+upload: ./4064563.jpg to s3://sagemaker-us-east-1-260184238360/input/4064563.jpg
+upload: ./4095217.jpg to s3://sagemaker-us-east-1-260184238360/input/4095217.jpg
+upload: ./4082878.jpg to s3://sagemaker-us-east-1-260184238360/input/4082878.jpg
+upload: ./4174616.jpg to s3://sagemaker-us-east-1-260184238360/input/4174616.jpg
+upload: ./4165149.jpg to s3://sagemaker-us-east-1-260184238360/input/4165149.jpg
+upload: ./3787344.jpg to s3://sagemaker-us-east-1-260184238360/input/3787344.jpg
+upload: ./3992659.jpg to s3://sagemaker-us-east-1-260184238360/input/3992659.jpg
+upload: ./4187599.jpg to s3://sagemaker-us-east-1-260184238360/input/4187599.jpg
+upload: ./4193744.jpg to s3://sagemaker-us-east-1-260184238360/input/4193744.jpg
+upload: ./3977830.jpg to s3://sagemaker-us-east-1-260184238360/input/3977830.jpg
+upload: ./4210740.jpg to s3://sagemaker-us-east-1-260184238360/input/4210740.jpg
+upload: ./4311470.jpg to s3://sagemaker-us-east-1-260184238360/input/4311470.jpg
+upload: ./4235263.jpg to s3://sagemaker-us-east-1-260184238360/input/4235263.jpg
+upload: ./4309307.jpg to s3://sagemaker-us-east-1-260184238360/input/4309307.jpg
+upload: ./397780.jpg to s3://sagemaker-us-east-1-260184238360/input/397780.jpg
+upload: ./418761.jpg to s3://sagemaker-us-east-1-260184238360/input/418761.jpg
+upload: ./4311471.jpg to s3://sagemaker-us-east-1-260184238360/input/4311471.jpg
+upload: ./3927527.jpg to s3://sagemaker-us-east-1-260184238360/input/3927527.jpg
+upload: ./4459251.jpg to s3://sagemaker-us-east-1-260184238360/input/4459251.jpg
+upload: ./4415867.jpg to s3://sagemaker-us-east-1-260184238360/input/4415867.jpg
+upload: ./441431.jpg to s3://sagemaker-us-east-1-260184238360/input/441431.jpg
+upload: ./3899906.jpg to s3://sagemaker-us-east-1-260184238360/input/3899906.jpg
+upload: ./466273.jpg to s3://sagemaker-us-east-1-260184238360/input/466273.jpg
+upload: ./4603320.jpg to s3://sagemaker-us-east-1-260184238360/input/4603320.jpg
+upload: ./4754331.jpg to s3://sagemaker-us-east-1-260184238360/input/4754331.jpg
+upload: ./465561.jpg to s3://sagemaker-us-east-1-260184238360/input/465561.jpg
+upload: ./4797845.jpg to s3://sagemaker-us-east-1-260184238360/input/4797845.jpg
+upload: ./4609029.jpg to s3://sagemaker-us-east-1-260184238360/input/4609029.jpg
+upload: ./4628101.jpg to s3://sagemaker-us-east-1-260184238360/input/4628101.jpg
+upload: ./4996293.jpg to s3://sagemaker-us-east-1-260184238360/input/4996293.jpg
+upload: ./4797829.jpg to s3://sagemaker-us-east-1-260184238360/input/4797829.jpg
+upload: ./4797846.jpg to s3://sagemaker-us-east-1-260184238360/input/4797846.jpg
+upload: ./5254018.jpg to s3://sagemaker-us-east-1-260184238360/input/5254018.jpg
+upload: ./5037168.jpg to s3://sagemaker-us-east-1-260184238360/input/5037168.jpg
+upload: ./4888045.jpg to s3://sagemaker-us-east-1-260184238360/input/4888045.jpg
+upload: ./5047459.jpg to s3://sagemaker-us-east-1-260184238360/input/5047459.jpg
+upload: ./5295321.jpg to s3://sagemaker-us-east-1-260184238360/input/5295321.jpg
+upload: ./534684.jpg to s3://sagemaker-us-east-1-260184238360/input/534684.jpg
+upload: ./5243865.jpg to s3://sagemaker-us-east-1-260184238360/input/5243865.jpg
+upload: ./5287617.jpg to s3://sagemaker-us-east-1-260184238360/input/5287617.jpg
+upload: ./458759.jpg to s3://sagemaker-us-east-1-260184238360/input/458759.jpg
+upload: ./5230479.jpg to s3://sagemaker-us-east-1-260184238360/input/5230479.jpg
+upload: ./5397717.jpg to s3://sagemaker-us-east-1-260184238360/input/5397717.jpg
+upload: ./548320.jpg to s3://sagemaker-us-east-1-260184238360/input/548320.jpg
+upload: ./534926.jpg to s3://sagemaker-us-east-1-260184238360/input/534926.jpg
+upload: ./548303.jpg to s3://sagemaker-us-east-1-260184238360/input/548303.jpg
+upload: ./5393274.jpg to s3://sagemaker-us-east-1-260184238360/input/5393274.jpg
+upload: ./5544510.jpg to s3://sagemaker-us-east-1-260184238360/input/5544510.jpg
+upload: ./5476166.jpg to s3://sagemaker-us-east-1-260184238360/input/5476166.jpg
+upload: ./5474129.jpg to s3://sagemaker-us-east-1-260184238360/input/5474129.jpg
+upload: ./5100385.jpg to s3://sagemaker-us-east-1-260184238360/input/5100385.jpg
+upload: ./5520144.jpg to s3://sagemaker-us-east-1-260184238360/input/5520144.jpg
+upload: ./5405024.jpg to s3://sagemaker-us-east-1-260184238360/input/5405024.jpg
+upload: ./5535715.jpg to s3://sagemaker-us-east-1-260184238360/input/5535715.jpg
+upload: ./5544509.jpg to s3://sagemaker-us-east-1-260184238360/input/5544509.jpg
+upload: ./5704624.jpg to s3://sagemaker-us-east-1-260184238360/input/5704624.jpg
+upload: ./5709073.jpg to s3://sagemaker-us-east-1-260184238360/input/5709073.jpg
+upload: ./5592625.jpg to s3://sagemaker-us-east-1-260184238360/input/5592625.jpg
+upload: ./570456.jpg to s3://sagemaker-us-east-1-260184238360/input/570456.jpg
+upload: ./5665282.jpg to s3://sagemaker-us-east-1-260184238360/input/5665282.jpg
+upload: ./5702855.jpg to s3://sagemaker-us-east-1-260184238360/input/5702855.jpg
+upload: ./5800240.jpg to s3://sagemaker-us-east-1-260184238360/input/5800240.jpg
+upload: ./5726711.jpg to s3://sagemaker-us-east-1-260184238360/input/5726711.jpg
+upload: ./5717250.jpg to s3://sagemaker-us-east-1-260184238360/input/5717250.jpg
+upload: ./5735703.jpg to s3://sagemaker-us-east-1-260184238360/input/5735703.jpg
+upload: ./579067.jpg to s3://sagemaker-us-east-1-260184238360/input/579067.jpg
+upload: ./5912119.jpg to s3://sagemaker-us-east-1-260184238360/input/5912119.jpg
+upload: ./599865.jpg to s3://sagemaker-us-east-1-260184238360/input/599865.jpg
+upload: ./5870657.jpg to s3://sagemaker-us-east-1-260184238360/input/5870657.jpg
+upload: ./573816.jpg to s3://sagemaker-us-east-1-260184238360/input/573816.jpg
+upload: ./591394.jpg to s3://sagemaker-us-east-1-260184238360/input/591394.jpg
+upload: ./6187512.jpg to s3://sagemaker-us-east-1-260184238360/input/6187512.jpg
+upload: ./603031.jpg to s3://sagemaker-us-east-1-260184238360/input/603031.jpg
+upload: ./609711.jpg to s3://sagemaker-us-east-1-260184238360/input/609711.jpg
+upload: ./6044995.jpg to s3://sagemaker-us-east-1-260184238360/input/6044995.jpg
+upload: ./5989105.jpg to s3://sagemaker-us-east-1-260184238360/input/5989105.jpg
+upload: ./5602977.jpg to s3://sagemaker-us-east-1-260184238360/input/5602977.jpg
+upload: ./6415127.jpg to s3://sagemaker-us-east-1-260184238360/input/6415127.jpg
+upload: ./6381998.jpg to s3://sagemaker-us-east-1-260184238360/input/6381998.jpg
+upload: ./6296565.jpg to s3://sagemaker-us-east-1-260184238360/input/6296565.jpg
+upload: ./6458782.jpg to s3://sagemaker-us-east-1-260184238360/input/6458782.jpg
+upload: ./6814980.jpg to s3://sagemaker-us-east-1-260184238360/input/6814980.jpg
+upload: ./6576634.jpg to s3://sagemaker-us-east-1-260184238360/input/6576634.jpg
+upload: ./6729805.jpg to s3://sagemaker-us-east-1-260184238360/input/6729805.jpg
+upload: ./6507610.jpg to s3://sagemaker-us-east-1-260184238360/input/6507610.jpg
+upload: ./6415462.jpg to s3://sagemaker-us-east-1-260184238360/input/6415462.jpg
+upload: ./653176.jpg to s3://sagemaker-us-east-1-260184238360/input/653176.jpg
+upload: ./6675259.jpg to s3://sagemaker-us-east-1-260184238360/input/6675259.jpg
+upload: ./6894165.jpg to s3://sagemaker-us-east-1-260184238360/input/6894165.jpg
+upload: ./6902498.jpg to s3://sagemaker-us-east-1-260184238360/input/6902498.jpg
+upload: ./6586221.jpg to s3://sagemaker-us-east-1-260184238360/input/6586221.jpg
+upload: ./6917834.jpg to s3://sagemaker-us-east-1-260184238360/input/6917834.jpg
+upload: ./6797780.jpg to s3://sagemaker-us-east-1-260184238360/input/6797780.jpg
+upload: ./6943059.jpg to s3://sagemaker-us-east-1-260184238360/input/6943059.jpg
+upload: ./7102825.jpg to s3://sagemaker-us-east-1-260184238360/input/7102825.jpg
+upload: ./6948902.jpg to s3://sagemaker-us-east-1-260184238360/input/6948902.jpg
+upload: ./7135222.jpg to s3://sagemaker-us-east-1-260184238360/input/7135222.jpg
+upload: ./7094891.jpg to s3://sagemaker-us-east-1-260184238360/input/7094891.jpg
+upload: ./712170.jpg to s3://sagemaker-us-east-1-260184238360/input/712170.jpg
+upload: ./6815391.jpg to s3://sagemaker-us-east-1-260184238360/input/6815391.jpg
+upload: ./7172247.jpg to s3://sagemaker-us-east-1-260184238360/input/7172247.jpg
+upload: ./7069816.jpg to s3://sagemaker-us-east-1-260184238360/input/7069816.jpg
+upload: ./6967241.jpg to s3://sagemaker-us-east-1-260184238360/input/6967241.jpg
+upload: ./7202668.jpg to s3://sagemaker-us-east-1-260184238360/input/7202668.jpg
+upload: ./7177822.jpg to s3://sagemaker-us-east-1-260184238360/input/7177822.jpg
+upload: ./7253464.jpg to s3://sagemaker-us-east-1-260184238360/input/7253464.jpg
+upload: ./7149449.jpg to s3://sagemaker-us-east-1-260184238360/input/7149449.jpg
+upload: ./7024032.jpg to s3://sagemaker-us-east-1-260184238360/input/7024032.jpg
+upload: ./7193173.jpg to s3://sagemaker-us-east-1-260184238360/input/7193173.jpg
+upload: ./7351837.jpg to s3://sagemaker-us-east-1-260184238360/input/7351837.jpg
+upload: ./7263703.jpg to s3://sagemaker-us-east-1-260184238360/input/7263703.jpg
+upload: ./7399034.jpg to s3://sagemaker-us-east-1-260184238360/input/7399034.jpg
+upload: ./7363261.jpg to s3://sagemaker-us-east-1-260184238360/input/7363261.jpg
+upload: ./7232396.jpg to s3://sagemaker-us-east-1-260184238360/input/7232396.jpg
+upload: ./7301708.jpg to s3://sagemaker-us-east-1-260184238360/input/7301708.jpg
+upload: ./7433564.jpg to s3://sagemaker-us-east-1-260184238360/input/7433564.jpg
+upload: ./7411702.jpg to s3://sagemaker-us-east-1-260184238360/input/7411702.jpg
+upload: ./7465403.jpg to s3://sagemaker-us-east-1-260184238360/input/7465403.jpg
+upload: ./7552984.jpg to s3://sagemaker-us-east-1-260184238360/input/7552984.jpg
+upload: ./7535421.jpg to s3://sagemaker-us-east-1-260184238360/input/7535421.jpg
+upload: ./7799668.jpg to s3://sagemaker-us-east-1-260184238360/input/7799668.jpg
+upload: ./7606249.jpg to s3://sagemaker-us-east-1-260184238360/input/7606249.jpg
+upload: ./7403704.jpg to s3://sagemaker-us-east-1-260184238360/input/7403704.jpg
+upload: ./7560100.jpg to s3://sagemaker-us-east-1-260184238360/input/7560100.jpg
+upload: ./7669887.jpg to s3://sagemaker-us-east-1-260184238360/input/7669887.jpg
+upload: ./7563820.jpg to s3://sagemaker-us-east-1-260184238360/input/7563820.jpg
+upload: ./7749622.jpg to s3://sagemaker-us-east-1-260184238360/input/7749622.jpg
+upload: ./7799671.jpg to s3://sagemaker-us-east-1-260184238360/input/7799671.jpg
+upload: ./7895679.jpg to s3://sagemaker-us-east-1-260184238360/input/7895679.jpg
+upload: ./7813343.jpg to s3://sagemaker-us-east-1-260184238360/input/7813343.jpg
+upload: ./7727530.jpg to s3://sagemaker-us-east-1-260184238360/input/7727530.jpg
+upload: ./7775938.jpg to s3://sagemaker-us-east-1-260184238360/input/7775938.jpg
+upload: ./7864547.jpg to s3://sagemaker-us-east-1-260184238360/input/7864547.jpg
+upload: ./7969257.jpg to s3://sagemaker-us-east-1-260184238360/input/7969257.jpg
+upload: ./7731620.jpg to s3://sagemaker-us-east-1-260184238360/input/7731620.jpg
+upload: ./8034635.jpg to s3://sagemaker-us-east-1-260184238360/input/8034635.jpg
+upload: ./8011544.jpg to s3://sagemaker-us-east-1-260184238360/input/8011544.jpg
+upload: ./7917924.jpg to s3://sagemaker-us-east-1-260184238360/input/7917924.jpg
+upload: ./8421746.jpg to s3://sagemaker-us-east-1-260184238360/input/8421746.jpg
+upload: ./8210622.jpg to s3://sagemaker-us-east-1-260184238360/input/8210622.jpg
+upload: ./8034632.jpg to s3://sagemaker-us-east-1-260184238360/input/8034632.jpg
+upload: ./811725.jpg to s3://sagemaker-us-east-1-260184238360/input/811725.jpg
+upload: ./8405434.jpg to s3://sagemaker-us-east-1-260184238360/input/8405434.jpg
+upload: ./8395363.jpg to s3://sagemaker-us-east-1-260184238360/input/8395363.jpg
+upload: ./8215592.jpg to s3://sagemaker-us-east-1-260184238360/input/8215592.jpg
+upload: ./8520341.jpg to s3://sagemaker-us-east-1-260184238360/input/8520341.jpg
+upload: ./8645016.jpg to s3://sagemaker-us-east-1-260184238360/input/8645016.jpg
+upload: ./8644268.jpg to s3://sagemaker-us-east-1-260184238360/input/8644268.jpg
+upload: ./8624894.jpg to s3://sagemaker-us-east-1-260184238360/input/8624894.jpg
+upload: ./8644641.jpg to s3://sagemaker-us-east-1-260184238360/input/8644641.jpg
+upload: ./8760942.jpg to s3://sagemaker-us-east-1-260184238360/input/8760942.jpg
+upload: ./8050677.jpg to s3://sagemaker-us-east-1-260184238360/input/8050677.jpg
+upload: ./8413023.jpg to s3://sagemaker-us-east-1-260184238360/input/8413023.jpg
+upload: ./8646366.jpg to s3://sagemaker-us-east-1-260184238360/input/8646366.jpg
+upload: ./8681903.jpg to s3://sagemaker-us-east-1-260184238360/input/8681903.jpg
+upload: ./8699605.jpg to s3://sagemaker-us-east-1-260184238360/input/8699605.jpg
+upload: ./8813739.jpg to s3://sagemaker-us-east-1-260184238360/input/8813739.jpg
+upload: ./882548.jpg to s3://sagemaker-us-east-1-260184238360/input/882548.jpg
+upload: ./8646384.jpg to s3://sagemaker-us-east-1-260184238360/input/8646384.jpg
+upload: ./8855115.jpg to s3://sagemaker-us-east-1-260184238360/input/8855115.jpg
+upload: ./8887797.jpg to s3://sagemaker-us-east-1-260184238360/input/8887797.jpg
+upload: ./8722712.jpg to s3://sagemaker-us-east-1-260184238360/input/8722712.jpg
+upload: ./8943708.jpg to s3://sagemaker-us-east-1-260184238360/input/8943708.jpg
+upload: ./8835014.jpg to s3://sagemaker-us-east-1-260184238360/input/8835014.jpg
+upload: ./9019418.jpg to s3://sagemaker-us-east-1-260184238360/input/9019418.jpg
+upload: ./8993245.jpg to s3://sagemaker-us-east-1-260184238360/input/8993245.jpg
+upload: ./9128036.jpg to s3://sagemaker-us-east-1-260184238360/input/9128036.jpg
+upload: ./9017964.jpg to s3://sagemaker-us-east-1-260184238360/input/9017964.jpg
+upload: ./9328246.jpg to s3://sagemaker-us-east-1-260184238360/input/9328246.jpg
+upload: ./8941833.jpg to s3://sagemaker-us-east-1-260184238360/input/8941833.jpg
+upload: ./9366274.jpg to s3://sagemaker-us-east-1-260184238360/input/9366274.jpg
+upload: ./9637165.jpg to s3://sagemaker-us-east-1-260184238360/input/9637165.jpg
+upload: ./9530124.jpg to s3://sagemaker-us-east-1-260184238360/input/9530124.jpg
+upload: ./9765741.jpg to s3://sagemaker-us-east-1-260184238360/input/9765741.jpg
+upload: ./9787032.jpg to s3://sagemaker-us-east-1-260184238360/input/9787032.jpg
+upload: ./9543188.jpg to s3://sagemaker-us-east-1-260184238360/input/9543188.jpg
+upload: ./9542264.jpg to s3://sagemaker-us-east-1-260184238360/input/9542264.jpg
+upload: ./9291964.jpg to s3://sagemaker-us-east-1-260184238360/input/9291964.jpg
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -13351,7 +13869,7 @@ dataset.zip         100%[===================&gt;]  67.12M  10.1MB/s    in 7.3s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">###########</span>
@@ -14466,24 +14984,24 @@ Preview of Augmented Manifest File Contents
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># #replacing bucket name and prefix to right format</span>
-<span class="c1"># outputManifest = open(&quot;output.manifest&quot;, &quot;rt&quot;)</span>
-<span class="c1"># #read file contents to string</span>
-<span class="c1"># manifest = outputManifest.read()</span>
-<span class="c1"># #replace all occurrences of the required string</span>
-<span class="c1"># replaceStr = BUCKET + &#39;/&#39; + PREFIX</span>
-<span class="c1"># manifest = manifest.replace(&#39;sagemaker-remars/datasets/na-bees/500&#39;, replaceStr)</span>
-<span class="c1"># #close the input file</span>
-<span class="c1"># outputManifest.close()</span>
-<span class="c1"># #open the input file in write mode</span>
-<span class="c1"># outputManifest = open(&quot;output.manifest&quot;, &quot;wt&quot;)</span>
-<span class="c1"># #overrite the input file with the resulting data</span>
-<span class="c1"># outputManifest.write(manifest)</span>
-<span class="c1"># #close the file</span>
-<span class="c1"># outputManifest.close()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#replacing bucket name and prefix to right format</span>
+<span class="n">outputManifest</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;output.manifest&quot;</span><span class="p">,</span> <span class="s2">&quot;rt&quot;</span><span class="p">)</span>
+<span class="c1">#read file contents to string</span>
+<span class="n">manifest</span> <span class="o">=</span> <span class="n">outputManifest</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="c1">#replace all occurrences of the required string</span>
+<span class="n">replaceStr</span> <span class="o">=</span> <span class="n">BUCKET</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">PREFIX</span>
+<span class="n">manifest</span> <span class="o">=</span> <span class="n">manifest</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;sagemaker-remars/datasets/na-bees/500&#39;</span><span class="p">,</span> <span class="n">replaceStr</span><span class="p">)</span>
+<span class="c1">#close the input file</span>
+<span class="n">outputManifest</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="c1">#open the input file in write mode</span>
+<span class="n">outputManifest</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;output.manifest&quot;</span><span class="p">,</span> <span class="s2">&quot;wt&quot;</span><span class="p">)</span>
+<span class="c1">#overrite the input file with the resulting data</span>
+<span class="n">outputManifest</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">manifest</span><span class="p">)</span>
+<span class="c1">#close the file</span>
+<span class="n">outputManifest</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -14493,7 +15011,7 @@ Preview of Augmented Manifest File Contents
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>head -3 <span class="nv">$augmented_manifest_file</span>
@@ -14513,9 +15031,9 @@ Preview of Augmented Manifest File Contents
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#34;source-ref&#34;:&#34;s3://sagemaker-remars/datasets/na-bees/500/10006450.jpg&#34;,&#34;bees-500&#34;:{&#34;annotations&#34;:[{&#34;class_id&#34;:0,&#34;width&#34;:95.39999999999998,&#34;top&#34;:256.2,&#34;height&#34;:86.80000000000001,&#34;left&#34;:177}],&#34;image_size&#34;:[{&#34;width&#34;:500,&#34;depth&#34;:3,&#34;height&#34;:500}]},&#34;bees-500-metadata&#34;:{&#34;job-name&#34;:&#34;labeling-job/bees-500&#34;,&#34;class-map&#34;:{&#34;0&#34;:&#34;bee&#34;},&#34;human-annotated&#34;:&#34;yes&#34;,&#34;objects&#34;:[{&#34;confidence&#34;:0.75}],&#34;creation-date&#34;:&#34;2019-05-16T00:15:58.914553&#34;,&#34;type&#34;:&#34;groundtruth/object-detection&#34;}}
-{&#34;source-ref&#34;:&#34;s3://sagemaker-remars/datasets/na-bees/500/10022723.jpg&#34;,&#34;bees-500&#34;:{&#34;annotations&#34;:[{&#34;class_id&#34;:0,&#34;width&#34;:93.8,&#34;top&#34;:228.8,&#34;height&#34;:135,&#34;left&#34;:126.8}],&#34;image_size&#34;:[{&#34;width&#34;:375,&#34;depth&#34;:3,&#34;height&#34;:500}]},&#34;bees-500-metadata&#34;:{&#34;job-name&#34;:&#34;labeling-job/bees-500&#34;,&#34;class-map&#34;:{&#34;0&#34;:&#34;bee&#34;},&#34;human-annotated&#34;:&#34;yes&#34;,&#34;objects&#34;:[{&#34;confidence&#34;:0.82}],&#34;creation-date&#34;:&#34;2019-05-16T00:41:33.384412&#34;,&#34;type&#34;:&#34;groundtruth/object-detection&#34;}}
-{&#34;source-ref&#34;:&#34;s3://sagemaker-remars/datasets/na-bees/500/10059108.jpg&#34;,&#34;bees-500&#34;:{&#34;annotations&#34;:[{&#34;class_id&#34;:0,&#34;width&#34;:157.39999999999998,&#34;top&#34;:188.60000000000002,&#34;height&#34;:131.2,&#34;left&#34;:110.8}],&#34;image_size&#34;:[{&#34;width&#34;:375,&#34;depth&#34;:3,&#34;height&#34;:500}]},&#34;bees-500-metadata&#34;:{&#34;job-name&#34;:&#34;labeling-job/bees-500&#34;,&#34;class-map&#34;:{&#34;0&#34;:&#34;bee&#34;},&#34;human-annotated&#34;:&#34;yes&#34;,&#34;objects&#34;:[{&#34;confidence&#34;:0.8}],&#34;creation-date&#34;:&#34;2019-05-16T00:57:28.636681&#34;,&#34;type&#34;:&#34;groundtruth/object-detection&#34;}}
+<pre>{&#34;source-ref&#34;:&#34;s3://sagemaker-us-east-1-260184238360/input/10006450.jpg&#34;,&#34;bees-500&#34;:{&#34;annotations&#34;:[{&#34;class_id&#34;:0,&#34;width&#34;:95.39999999999998,&#34;top&#34;:256.2,&#34;height&#34;:86.80000000000001,&#34;left&#34;:177}],&#34;image_size&#34;:[{&#34;width&#34;:500,&#34;depth&#34;:3,&#34;height&#34;:500}]},&#34;bees-500-metadata&#34;:{&#34;job-name&#34;:&#34;labeling-job/bees-500&#34;,&#34;class-map&#34;:{&#34;0&#34;:&#34;bee&#34;},&#34;human-annotated&#34;:&#34;yes&#34;,&#34;objects&#34;:[{&#34;confidence&#34;:0.75}],&#34;creation-date&#34;:&#34;2019-05-16T00:15:58.914553&#34;,&#34;type&#34;:&#34;groundtruth/object-detection&#34;}}
+{&#34;source-ref&#34;:&#34;s3://sagemaker-us-east-1-260184238360/input/10022723.jpg&#34;,&#34;bees-500&#34;:{&#34;annotations&#34;:[{&#34;class_id&#34;:0,&#34;width&#34;:93.8,&#34;top&#34;:228.8,&#34;height&#34;:135,&#34;left&#34;:126.8}],&#34;image_size&#34;:[{&#34;width&#34;:375,&#34;depth&#34;:3,&#34;height&#34;:500}]},&#34;bees-500-metadata&#34;:{&#34;job-name&#34;:&#34;labeling-job/bees-500&#34;,&#34;class-map&#34;:{&#34;0&#34;:&#34;bee&#34;},&#34;human-annotated&#34;:&#34;yes&#34;,&#34;objects&#34;:[{&#34;confidence&#34;:0.82}],&#34;creation-date&#34;:&#34;2019-05-16T00:41:33.384412&#34;,&#34;type&#34;:&#34;groundtruth/object-detection&#34;}}
+{&#34;source-ref&#34;:&#34;s3://sagemaker-us-east-1-260184238360/input/10059108.jpg&#34;,&#34;bees-500&#34;:{&#34;annotations&#34;:[{&#34;class_id&#34;:0,&#34;width&#34;:157.39999999999998,&#34;top&#34;:188.60000000000002,&#34;height&#34;:131.2,&#34;left&#34;:110.8}],&#34;image_size&#34;:[{&#34;width&#34;:375,&#34;depth&#34;:3,&#34;height&#34;:500}]},&#34;bees-500-metadata&#34;:{&#34;job-name&#34;:&#34;labeling-job/bees-500&#34;,&#34;class-map&#34;:{&#34;0&#34;:&#34;bee&#34;},&#34;human-annotated&#34;:&#34;yes&#34;,&#34;objects&#34;:[{&#34;confidence&#34;:0.8}],&#34;creation-date&#34;:&#34;2019-05-16T00:57:28.636681&#34;,&#34;type&#34;:&#34;groundtruth/object-detection&#34;}}
 </pre>
 </div>
 </div>
@@ -14579,7 +15097,7 @@ Preview of Augmented Manifest File Contents
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip -q install --upgrade pip
@@ -14615,7 +15133,7 @@ Preview of Augmented Manifest File Contents
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
@@ -14681,7 +15199,7 @@ Preview of Augmented Manifest File Contents
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pfx_training</span> <span class="o">=</span> <span class="n">PREFIX</span> <span class="o">+</span> <span class="s1">&#39;/training&#39;</span> <span class="k">if</span> <span class="n">PREFIX</span> <span class="k">else</span> <span class="s1">&#39;training&#39;</span>
@@ -14733,7 +15251,7 @@ upload: ./validation.manifest to s3://sagemaker-us-east-1-260184238360/input/tra
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">boto3</span>
@@ -14856,7 +15374,7 @@ upload: ./validation.manifest to s3://sagemaker-us-east-1-260184238360/input/tra
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Training job name: bees-detection-resnet-2021-02-08-08-37-31
+<pre>Training job name: bees-detection-resnet-2021-02-08-09-40-39
 
 Input Data Location: {&#39;S3DataType&#39;: &#39;AugmentedManifestFile&#39;, &#39;S3Uri&#39;: &#39;s3://sagemaker-us-east-1-260184238360/input/training/train.manifest&#39;, &#39;S3DataDistributionType&#39;: &#39;FullyReplicated&#39;, &#39;AttributeNames&#39;: [&#39;source-ref&#39;, &#39;bees-500&#39;]}
 Training job current status: InProgress
@@ -14886,7 +15404,7 @@ Training job current status: InProgress
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">model_name</span> <span class="o">=</span> <span class="n">job_name</span>
@@ -14894,10 +15412,9 @@ Training job current status: InProgress
 <span class="n">training_info</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">describe_training_job</span><span class="p">(</span><span class="n">TrainingJobName</span><span class="o">=</span><span class="n">job_name</span><span class="p">)</span>
 
 <span class="n">status</span> <span class="o">=</span> <span class="n">training_info</span><span class="p">[</span><span class="s1">&#39;TrainingJobStatus&#39;</span><span class="p">]</span>
-<span class="n">failed_reason</span><span class="o">=</span><span class="n">training_info</span><span class="p">[</span><span class="s1">&#39;FailureReason&#39;</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Training job current status: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">status</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">failed_reason</span><span class="p">)</span>
+
 
 <span class="n">training_image</span> <span class="o">=</span> <span class="n">training_info</span><span class="p">[</span><span class="s1">&#39;AlgorithmSpecification&#39;</span><span class="p">][</span><span class="s1">&#39;TrainingImage&#39;</span><span class="p">]</span>
 <span class="n">model_data</span> <span class="o">=</span> <span class="n">training_info</span><span class="p">[</span><span class="s1">&#39;ModelArtifacts&#39;</span><span class="p">][</span><span class="s1">&#39;S3ModelArtifacts&#39;</span><span class="p">]</span>
@@ -14919,17 +15436,38 @@ Training job current status: InProgress
     <span class="n">ExecutionRoleArn</span> <span class="o">=</span> <span class="n">role</span><span class="p">,</span>
     <span class="n">PrimaryContainer</span> <span class="o">=</span> <span class="n">primary_container</span><span class="p">)</span>
 
-<span class="c1"># print(create_model_response[&#39;ModelArn&#39;])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">create_model_response</span><span class="p">[</span><span class="s1">&#39;ModelArn&#39;</span><span class="p">])</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Training job current status: Completed
+{&#39;Image&#39;: &#39;811284229777.dkr.ecr.us-east-1.amazonaws.com/object-detection:1&#39;, &#39;ModelDataUrl&#39;: &#39;s3://sagemaker-us-east-1-260184238360/output/bees-detection-resnet-2021-02-08-09-40-39/output/model.tar.gz&#39;}
+{&#39;TrainingJobName&#39;: &#39;bees-detection-resnet-2021-02-08-09-40-39&#39;, &#39;TrainingJobArn&#39;: &#39;arn:aws:sagemaker:us-east-1:260184238360:training-job/bees-detection-resnet-2021-02-08-09-40-39&#39;, &#39;ModelArtifacts&#39;: {&#39;S3ModelArtifacts&#39;: &#39;s3://sagemaker-us-east-1-260184238360/output/bees-detection-resnet-2021-02-08-09-40-39/output/model.tar.gz&#39;}, &#39;TrainingJobStatus&#39;: &#39;Completed&#39;, &#39;SecondaryStatus&#39;: &#39;Completed&#39;, &#39;HyperParameters&#39;: {&#39;base_network&#39;: &#39;resnet-50&#39;, &#39;epochs&#39;: &#39;100&#39;, &#39;image_shape&#39;: &#39;300&#39;, &#39;label_width&#39;: &#39;350&#39;, &#39;learning_rate&#39;: &#39;0.001&#39;, &#39;lr_scheduler_factor&#39;: &#39;0.1&#39;, &#39;lr_scheduler_step&#39;: &#39;3,6&#39;, &#39;mini_batch_size&#39;: &#39;2&#39;, &#39;momentum&#39;: &#39;0.9&#39;, &#39;nms_threshold&#39;: &#39;0.45&#39;, &#39;num_classes&#39;: &#39;1&#39;, &#39;num_training_samples&#39;: &#39;400&#39;, &#39;optimizer&#39;: &#39;rmsprop&#39;, &#39;overlap_threshold&#39;: &#39;0.5&#39;, &#39;use_pretrained_model&#39;: &#39;1&#39;, &#39;weight_decay&#39;: &#39;0.0005&#39;}, &#39;AlgorithmSpecification&#39;: {&#39;TrainingImage&#39;: &#39;811284229777.dkr.ecr.us-east-1.amazonaws.com/object-detection:1&#39;, &#39;TrainingInputMode&#39;: &#39;Pipe&#39;, &#39;MetricDefinitions&#39;: [{&#39;Name&#39;: &#39;train:progress&#39;, &#39;Regex&#39;: &#39;#progress_metric: host=\\S+, completed (\\S+) %&#39;}, {&#39;Name&#39;: &#39;train:smooth_l1&#39;, &#39;Regex&#39;: &#39;#quality_metric: host=\\S+, epoch=\\S+, batch=\\S+ train smooth_l1 &lt;loss&gt;=\\((\\S+)\\)&#39;}, {&#39;Name&#39;: &#39;train:cross_entropy&#39;, &#39;Regex&#39;: &#39;#quality_metric: host=\\S+, epoch=\\S+, batch=\\S+ train cross_entropy &lt;loss&gt;=\\((\\S+)\\)&#39;}, {&#39;Name&#39;: &#39;train:throughput&#39;, &#39;Regex&#39;: &#39;#throughput_metric: host=\\S+, train throughput=(\\S+) records/second&#39;}, {&#39;Name&#39;: &#39;validation:mAP&#39;, &#39;Regex&#39;: &#39;#quality_metric: host=\\S+, epoch=\\S+, validation mAP &lt;score&gt;=\\((\\S+)\\)&#39;}], &#39;EnableSageMakerMetricsTimeSeries&#39;: False}, &#39;RoleArn&#39;: &#39;arn:aws:iam::260184238360:role/service-role/AmazonSageMaker-ExecutionRole-20210208T070106&#39;, &#39;InputDataConfig&#39;: [{&#39;ChannelName&#39;: &#39;train&#39;, &#39;DataSource&#39;: {&#39;S3DataSource&#39;: {&#39;S3DataType&#39;: &#39;AugmentedManifestFile&#39;, &#39;S3Uri&#39;: &#39;s3://sagemaker-us-east-1-260184238360/input/training/train.manifest&#39;, &#39;S3DataDistributionType&#39;: &#39;FullyReplicated&#39;, &#39;AttributeNames&#39;: [&#39;source-ref&#39;, &#39;bees-500&#39;]}}, &#39;ContentType&#39;: &#39;application/x-recordio&#39;, &#39;CompressionType&#39;: &#39;None&#39;, &#39;RecordWrapperType&#39;: &#39;RecordIO&#39;}, {&#39;ChannelName&#39;: &#39;validation&#39;, &#39;DataSource&#39;: {&#39;S3DataSource&#39;: {&#39;S3DataType&#39;: &#39;AugmentedManifestFile&#39;, &#39;S3Uri&#39;: &#39;s3://sagemaker-us-east-1-260184238360/input/training/validation.manifest&#39;, &#39;S3DataDistributionType&#39;: &#39;FullyReplicated&#39;, &#39;AttributeNames&#39;: [&#39;source-ref&#39;, &#39;bees-500&#39;]}}, &#39;ContentType&#39;: &#39;application/x-recordio&#39;, &#39;CompressionType&#39;: &#39;None&#39;, &#39;RecordWrapperType&#39;: &#39;RecordIO&#39;}], &#39;OutputDataConfig&#39;: {&#39;KmsKeyId&#39;: &#39;&#39;, &#39;S3OutputPath&#39;: &#39;s3://sagemaker-us-east-1-260184238360/output&#39;}, &#39;ResourceConfig&#39;: {&#39;InstanceType&#39;: &#39;ml.p3.2xlarge&#39;, &#39;InstanceCount&#39;: 1, &#39;VolumeSizeInGB&#39;: 1}, &#39;StoppingCondition&#39;: {&#39;MaxRuntimeInSeconds&#39;: 86400}, &#39;CreationTime&#39;: datetime.datetime(2021, 2, 8, 9, 40, 40, 234000, tzinfo=tzlocal()), &#39;TrainingStartTime&#39;: datetime.datetime(2021, 2, 8, 9, 42, 53, 817000, tzinfo=tzlocal()), &#39;TrainingEndTime&#39;: datetime.datetime(2021, 2, 8, 10, 8, 0, 645000, tzinfo=tzlocal()), &#39;LastModifiedTime&#39;: datetime.datetime(2021, 2, 8, 10, 8, 0, 645000, tzinfo=tzlocal()), &#39;SecondaryStatusTransitions&#39;: [{&#39;Status&#39;: &#39;Starting&#39;, &#39;StartTime&#39;: datetime.datetime(2021, 2, 8, 9, 40, 40, 234000, tzinfo=tzlocal()), &#39;EndTime&#39;: datetime.datetime(2021, 2, 8, 9, 42, 53, 817000, tzinfo=tzlocal()), &#39;StatusMessage&#39;: &#39;Preparing the instances for training&#39;}, {&#39;Status&#39;: &#39;Downloading&#39;, &#39;StartTime&#39;: datetime.datetime(2021, 2, 8, 9, 42, 53, 817000, tzinfo=tzlocal()), &#39;EndTime&#39;: datetime.datetime(2021, 2, 8, 9, 43, 4, 898000, tzinfo=tzlocal()), &#39;StatusMessage&#39;: &#39;Downloading input data&#39;}, {&#39;Status&#39;: &#39;Training&#39;, &#39;StartTime&#39;: datetime.datetime(2021, 2, 8, 9, 43, 4, 898000, tzinfo=tzlocal()), &#39;EndTime&#39;: datetime.datetime(2021, 2, 8, 10, 7, 43, 850000, tzinfo=tzlocal()), &#39;StatusMessage&#39;: &#39;Training image download completed. Training in progress.&#39;}, {&#39;Status&#39;: &#39;Uploading&#39;, &#39;StartTime&#39;: datetime.datetime(2021, 2, 8, 10, 7, 43, 850000, tzinfo=tzlocal()), &#39;EndTime&#39;: datetime.datetime(2021, 2, 8, 10, 8, 0, 645000, tzinfo=tzlocal()), &#39;StatusMessage&#39;: &#39;Uploading generated training model&#39;}, {&#39;Status&#39;: &#39;Completed&#39;, &#39;StartTime&#39;: datetime.datetime(2021, 2, 8, 10, 8, 0, 645000, tzinfo=tzlocal()), &#39;EndTime&#39;: datetime.datetime(2021, 2, 8, 10, 8, 0, 645000, tzinfo=tzlocal()), &#39;StatusMessage&#39;: &#39;Training job completed&#39;}], &#39;FinalMetricDataList&#39;: [{&#39;MetricName&#39;: &#39;train:progress&#39;, &#39;Value&#39;: 100.0, &#39;Timestamp&#39;: datetime.datetime(1970, 1, 19, 15, 59, 38, 861000, tzinfo=tzlocal())}, {&#39;MetricName&#39;: &#39;train:smooth_l1&#39;, &#39;Value&#39;: 0.4177117645740509, &#39;Timestamp&#39;: datetime.datetime(1970, 1, 19, 15, 59, 38, 858000, tzinfo=tzlocal())}, {&#39;MetricName&#39;: &#39;train:cross_entropy&#39;, &#39;Value&#39;: 0.46032509207725525, &#39;Timestamp&#39;: datetime.datetime(1970, 1, 19, 15, 59, 38, 858000, tzinfo=tzlocal())}, {&#39;MetricName&#39;: &#39;validation:mAP&#39;, &#39;Value&#39;: 0.4596576392650604, &#39;Timestamp&#39;: datetime.datetime(1970, 1, 19, 15, 59, 38, 861000, tzinfo=tzlocal())}], &#39;EnableNetworkIsolation&#39;: False, &#39;EnableInterContainerTrafficEncryption&#39;: False, &#39;EnableManagedSpotTraining&#39;: False, &#39;TrainingTimeInSeconds&#39;: 1507, &#39;BillableTimeInSeconds&#39;: 1507, &#39;ProfilingStatus&#39;: &#39;Disabled&#39;, &#39;ResponseMetadata&#39;: {&#39;RequestId&#39;: &#39;ae7b2949-8e7b-4665-b944-379891c64be9&#39;, &#39;HTTPStatusCode&#39;: 200, &#39;HTTPHeaders&#39;: {&#39;x-amzn-requestid&#39;: &#39;ae7b2949-8e7b-4665-b944-379891c64be9&#39;, &#39;content-type&#39;: &#39;application/x-amz-json-1.1&#39;, &#39;content-length&#39;: &#39;4228&#39;, &#39;date&#39;: &#39;Mon, 08 Feb 2021 10:09:06 GMT&#39;}, &#39;RetryAttempts&#39;: 0}}
+arn:aws:sagemaker:us-east-1:260184238360:model/bees-detection-resnet-2021-02-08-09-40-39
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">endpoint_config_name</span> <span class="o">=</span> <span class="n">job_name</span> <span class="o">+</span> <span class="s1">&#39;-epc&#39;</span>
@@ -14949,6 +15487,25 @@ Training job current status: InProgress
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Endpoint configuration name: bees-detection-resnet-2021-02-08-09-40-39-epc
+Endpoint configuration arn:  arn:aws:sagemaker:us-east-1:260184238360:endpoint-config/bees-detection-resnet-2021-02-08-09-40-39-epc
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -14960,7 +15517,7 @@ Training job current status: InProgress
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">endpoint_name</span> <span class="o">=</span> <span class="n">job_name</span> <span class="o">+</span> <span class="s1">&#39;-ep&#39;</span>
@@ -14983,6 +15540,26 @@ Training job current status: InProgress
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Endpoint name: bees-detection-resnet-2021-02-08-09-40-39-ep
+EndpointArn = arn:aws:sagemaker:us-east-1:260184238360:endpoint/bees-detection-resnet-2021-02-08-09-40-39-ep
+EndpointStatus = Creating
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -15001,7 +15578,7 @@ Training job current status: InProgress
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span>
@@ -15010,6 +15587,33 @@ Training job current status: InProgress
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>test/22673445.jpg
+test/22427594.jpg
+test/22469656.jpg
+test/22774999.jpg
+test/22775000.jpg
+test/22544384.jpg
+test/23086755.jpg
+test/22741822.jpg
+test/22901964.jpg
+test/22971237.jpg
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -15024,10 +15628,12 @@ Training job current status: InProgress
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">prediction_to_bbox_data</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="n">prediction</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+
+<span class="k">def</span> <span class="nf">prediction_to_bbox_data</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="n">prediction</span><span class="p">):</span>
     <span class="n">class_id</span><span class="p">,</span> <span class="n">confidence</span><span class="p">,</span> <span class="n">xmin</span><span class="p">,</span> <span class="n">ymin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">ymax</span> <span class="o">=</span> <span class="n">prediction</span>
     <span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span><span class="o">.</span><span class="n">size</span>
     <span class="n">bbox_data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class_id&#39;</span><span class="p">:</span> <span class="n">class_id</span><span class="p">,</span>
@@ -15053,7 +15659,7 @@ Training job current status: InProgress
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -15090,10 +15696,37 @@ Training job current status: InProgress
     <span class="n">predictions</span> <span class="o">=</span> <span class="p">[</span><span class="n">prediction</span> <span class="k">for</span> <span class="n">prediction</span> <span class="ow">in</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;prediction&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="n">prediction</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">confidence_threshold</span><span class="p">]</span>
     <span class="n">predictions</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
     <span class="n">bboxes</span> <span class="o">=</span> <span class="p">[</span><span class="n">prediction_to_bbox_data</span><span class="p">(</span><span class="n">test_image</span><span class="p">,</span> <span class="n">prediction</span><span class="p">)</span> <span class="k">for</span> <span class="n">prediction</span> <span class="ow">in</span> <span class="n">predictions</span><span class="p">[:</span><span class="n">best_n</span><span class="p">]]</span>
-    <span class="n">show_annotated_image</span><span class="p">(</span><span class="n">test_image</span><span class="p">,</span> <span class="n">bboxes</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">bboxes</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[{&#39;class_id&#39;: 0.0, &#39;height&#39;: 44.66329514980316, &#39;width&#39;: 49.55922067165375, &#39;left&#39;: 165.43690860271454, &#39;top&#39;: 240.1680201292038}]
+[{&#39;class_id&#39;: 0.0, &#39;height&#39;: 88.68864178657532, &#39;width&#39;: 75.85268095135689, &#39;left&#39;: 112.90791258215904, &#39;top&#39;: 155.6498408317566}]
+[{&#39;class_id&#39;: 0.0, &#39;height&#39;: 71.79604470729828, &#39;width&#39;: 51.472730934619904, &#39;left&#39;: 147.58238196372986, &#39;top&#39;: 223.93007576465607}]
+[]
+[]
+[{&#39;class_id&#39;: 0.0, &#39;height&#39;: 298.57969558238983, &#39;width&#39;: 481.32139444351196, &#39;left&#39;: 14.522910118103027, &#39;top&#39;: 33.66514241695404}]
+[]
+[{&#39;class_id&#39;: 0.0, &#39;height&#39;: 451.04070007801056, &#39;width&#39;: 374.79897379875183, &#39;left&#39;: 0.0, &#39;top&#39;: 31.9814532995224}]
+[]
+[]
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -15109,13 +15742,70 @@ Training job current status: InProgress
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">client</span><span class="o">.</span><span class="n">delete_endpoint</span><span class="p">(</span><span class="n">EndpointName</span><span class="o">=</span><span class="n">endpoint_name</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[53]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;ResponseMetadata&#39;: {&#39;RequestId&#39;: &#39;1e09ba12-ceee-411b-b4cc-01d41fbb3dc7&#39;,
+  &#39;HTTPStatusCode&#39;: 200,
+  &#39;HTTPHeaders&#39;: {&#39;x-amzn-requestid&#39;: &#39;1e09ba12-ceee-411b-b4cc-01d41fbb3dc7&#39;,
+   &#39;content-type&#39;: &#39;application/x-amz-json-1.1&#39;,
+   &#39;content-length&#39;: &#39;0&#39;,
+   &#39;date&#39;: &#39;Mon, 08 Feb 2021 10:26:23 GMT&#39;},
+  &#39;RetryAttempts&#39;: 0}}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;end of task&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>end of task
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
