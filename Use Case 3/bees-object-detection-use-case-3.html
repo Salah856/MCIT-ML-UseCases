@@ -14681,7 +14681,7 @@ Preview of Augmented Manifest File Contents
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pfx_training</span> <span class="o">=</span> <span class="n">PREFIX</span> <span class="o">+</span> <span class="s1">&#39;/training&#39;</span> <span class="k">if</span> <span class="n">PREFIX</span> <span class="k">else</span> <span class="s1">&#39;training&#39;</span>
@@ -14733,7 +14733,7 @@ upload: ./validation.manifest to s3://sagemaker-us-east-1-260184238360/input/tra
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[73]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">boto3</span>
@@ -14760,15 +14760,15 @@ upload: ./validation.manifest to s3://sagemaker-us-east-1-260184238360/input/tra
     <span class="s2">&quot;ResourceConfig&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;InstanceCount&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>   
         <span class="s2">&quot;InstanceType&quot;</span><span class="p">:</span> <span class="s2">&quot;ml.p3.2xlarge&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;VolumeSizeInGB&quot;</span><span class="p">:</span> <span class="mi">50</span>
+        <span class="s2">&quot;VolumeSizeInGB&quot;</span><span class="p">:</span> <span class="mi">1</span>
     <span class="p">},</span>
     <span class="s2">&quot;TrainingJobName&quot;</span><span class="p">:</span> <span class="n">job_name</span><span class="p">,</span>
     <span class="s2">&quot;HyperParameters&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="c1"># NB. These hyperparameters are at the user&#39;s discretion and are beyond the scope of this demo.</span>
          <span class="s2">&quot;base_network&quot;</span><span class="p">:</span> <span class="s2">&quot;resnet-50&quot;</span><span class="p">,</span>
          <span class="s2">&quot;use_pretrained_model&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
          <span class="s2">&quot;num_classes&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
-         <span class="s2">&quot;mini_batch_size&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
-         <span class="s2">&quot;epochs&quot;</span><span class="p">:</span> <span class="s2">&quot;5&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;mini_batch_size&quot;</span><span class="p">:</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;epochs&quot;</span><span class="p">:</span> <span class="s2">&quot;100&quot;</span><span class="p">,</span>
          <span class="s2">&quot;learning_rate&quot;</span><span class="p">:</span> <span class="s2">&quot;0.001&quot;</span><span class="p">,</span>
          <span class="s2">&quot;lr_scheduler_step&quot;</span><span class="p">:</span> <span class="s2">&quot;3,6&quot;</span><span class="p">,</span>
          <span class="s2">&quot;lr_scheduler_factor&quot;</span><span class="p">:</span> <span class="s2">&quot;0.1&quot;</span><span class="p">,</span>
@@ -14856,7 +14856,7 @@ upload: ./validation.manifest to s3://sagemaker-us-east-1-260184238360/input/tra
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Training job name: bees-detection-resnet-2021-02-08-07-44-04
+<pre>Training job name: bees-detection-resnet-2021-02-08-08-37-31
 
 Input Data Location: {&#39;S3DataType&#39;: &#39;AugmentedManifestFile&#39;, &#39;S3Uri&#39;: &#39;s3://sagemaker-us-east-1-260184238360/input/training/train.manifest&#39;, &#39;S3DataDistributionType&#39;: &#39;FullyReplicated&#39;, &#39;AttributeNames&#39;: [&#39;source-ref&#39;, &#39;bees-500&#39;]}
 Training job current status: InProgress
@@ -14886,15 +14886,18 @@ Training job current status: InProgress
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[74]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#import time</span>
-<span class="c1">#timestamp = time.strftime(&#39;-%Y-%m-%d-%H-%M-%S&#39;, time.gmtime())</span>
-
-<span class="n">model_name</span> <span class="o">=</span> <span class="n">job_name</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model_name</span> <span class="o">=</span> <span class="n">job_name</span>
 
 <span class="n">training_info</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">describe_training_job</span><span class="p">(</span><span class="n">TrainingJobName</span><span class="o">=</span><span class="n">job_name</span><span class="p">)</span>
+
+<span class="n">status</span> <span class="o">=</span> <span class="n">training_info</span><span class="p">[</span><span class="s1">&#39;TrainingJobStatus&#39;</span><span class="p">]</span>
+<span class="n">failed_reason</span><span class="o">=</span><span class="n">training_info</span><span class="p">[</span><span class="s1">&#39;FailureReason&#39;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Training job current status: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">status</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">failed_reason</span><span class="p">)</span>
 
 <span class="n">training_image</span> <span class="o">=</span> <span class="n">training_info</span><span class="p">[</span><span class="s1">&#39;AlgorithmSpecification&#39;</span><span class="p">][</span><span class="s1">&#39;TrainingImage&#39;</span><span class="p">]</span>
 <span class="n">model_data</span> <span class="o">=</span> <span class="n">training_info</span><span class="p">[</span><span class="s1">&#39;ModelArtifacts&#39;</span><span class="p">][</span><span class="s1">&#39;S3ModelArtifacts&#39;</span><span class="p">]</span>
@@ -14916,7 +14919,7 @@ Training job current status: InProgress
     <span class="n">ExecutionRoleArn</span> <span class="o">=</span> <span class="n">role</span><span class="p">,</span>
     <span class="n">PrimaryContainer</span> <span class="o">=</span> <span class="n">primary_container</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">create_model_response</span><span class="p">[</span><span class="s1">&#39;ModelArn&#39;</span><span class="p">])</span>
+<span class="c1"># print(create_model_response[&#39;ModelArn&#39;])</span>
 </pre></div>
 
     </div>
@@ -14926,7 +14929,7 @@ Training job current status: InProgress
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[75]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">endpoint_config_name</span> <span class="o">=</span> <span class="n">job_name</span> <span class="o">+</span> <span class="s1">&#39;-epc&#39;</span>
@@ -14957,11 +14960,10 @@ Training job current status: InProgress
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[76]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#timestamp = time.strftime(&#39;-%Y-%m-%d-%H-%M-%S&#39;, time.gmtime())</span>
-<span class="n">endpoint_name</span> <span class="o">=</span> <span class="n">job_name</span> <span class="o">+</span> <span class="s1">&#39;-ep&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">endpoint_name</span> <span class="o">=</span> <span class="n">job_name</span> <span class="o">+</span> <span class="s1">&#39;-ep&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Endpoint name: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">endpoint_name</span><span class="p">))</span>
 
 <span class="n">endpoint_params</span> <span class="o">=</span> <span class="p">{</span>
@@ -14999,7 +15001,7 @@ Training job current status: InProgress
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[77]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span>
@@ -15022,7 +15024,7 @@ Training job current status: InProgress
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In&nbsp;[78]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">prediction_to_bbox_data</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="n">prediction</span><span class="p">):</span>
@@ -15051,7 +15053,7 @@ Training job current status: InProgress
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[79]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -15107,10 +15109,23 @@ Training job current status: InProgress
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="prompt input_prompt">In&nbsp;[80]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">client</span><span class="o">.</span><span class="n">delete_endpoint</span><span class="p">(</span><span class="n">EndpointName</span><span class="o">=</span><span class="n">endpoint_name</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
     </div>
