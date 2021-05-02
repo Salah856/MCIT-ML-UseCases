@@ -2,8 +2,6 @@
 
 This is repo for solutions of ML use cases in MCIT training 
 
-
-
 # jarvis code 
 # Requires PyAudio and PySpeech.
 
